@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken AR Experience</title>
+    <!-- Core A-Frame and AR.js Framework Libraries -->
+    <script src="https://aframe.io"></script>
+    <script src="https://githack.com"></script>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: sans-serif; }
+        .ar-ui {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ar-ui">
+        <h1>Chicken AR Experience</h1>
+        <h2>Point Camera at Hiro Marker to Start</h2>
+    </div>
+
+    <!-- AR Scene Setup -->
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+        
+        <a-assets>
+            <!-- Ensure this path points correctly to your chicken 3D model asset -->
+            <a-asset-item id="chicken-model" src="chicken.glb"></a-asset-item>
+        </a-assets>
+
+        <!-- Hiro Marker Handling -->
+        <a-marker preset="hiro">
+            <!-- 
+              FIXED: Scale dramatically reduced to 0.005 to compensate for 
+              the huge internal bounding coordinates of your raw 3D file.
+            -->
+            
+            
+        </a-marker>
+
+        <!-- Default Camera System -->
+        
+
+    </a-scene>
+
+</body>
+</html>
